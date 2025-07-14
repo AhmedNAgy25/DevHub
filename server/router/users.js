@@ -48,7 +48,7 @@ router.post(
         },
       };
       const secretKey = process.env.SECRET_KEY;
-      console.log(secretKey);
+
       jwt.sign(payload, secretKey, { expiresIn: "7d" }, (err, token) => {
         if (err) {
           throw err;

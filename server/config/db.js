@@ -1,8 +1,8 @@
 const mongoose = require("mongoose");
-
+require("dotenv").config();
 const connectDB = async () => {
-  const dbConnectionString =
-    "mongodb+srv://serverDevhub:v98BAwpJVgOld2aa@cluster0.xoo8rtj.mongodb.net/devhubDB?retryWrites=true&w=majority&appName=Cluster0";
+  const dbConnectionString = process.env.DB_CONNECTION_STRING;
+
   try {
     await mongoose.connect(dbConnectionString);
     console.log("MongoDB connected");
